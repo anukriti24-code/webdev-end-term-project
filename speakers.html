@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speakers - TechSubmit 2026</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #f8fafc;
+      margin-bottom: 16px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 0;
+    }
+
+    .main-nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #38bdf8;
+      background-color: rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .speaker-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: #38bdf8;
+    }
+
+   
+    .speaker-card:target {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
+      animation: pulseTarget 1s ease;
+    }
+
+    @keyframes pulseTarget {
+      0% { transform: scale(0.98); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .speaker-card h2 {
+      font-size: 1.3rem;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      color: #38bdf8;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+   
+
+    @media (max-width: 600px) {
+      .speakers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Featured Keynote Speakers</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">← Back to Schedule</a></li>
+        <li><a href="speakers.html" class="active">Meet the Speakers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="speakers-grid">
+
+    <article class="speaker-card" id="alex">
+      <div class="avatar">AR</div>
+      <h2>Alex Rivers</h2>
+      <p class="role"> UI/UIX and Design Systems Engineer</p>
+     
+      <ul>
+        <li><strong>Keynote Session:</strong> Mastering Production-Grade Advanced CSS</li>
+        <li><strong>Venue & Time:</strong> Main Hall Alpha • 11:00 AM – 12:30 PM</li>
+        <li><strong>Core Curriculum Covered:</strong>
+          <ol style="margin-top: 6px; margin-left: 18px; font-size: 0.85rem; color: #94a3b8;">
+            <li>CSS Grid auto-fit/fill & minmax() algorithms</li>
+            <li>Zero-JS UI mechanics using :has(), :is(), and :target</li>
+            <li>Hardware-accelerated CSS keyframes (GPU transforms & opacity)</li>
+            <li>Dynamic responsive fluid sizing with clamp(), calc(), and min()</li>
+          </ol>
+        </li>
+        </ul>
+     
+    </article>
+
+
+    <article class="speaker-card" id="priya">
+      <div class="avatar">PS</div>
+      <h2>Priya Sharma</h2>
+      <p class="role">Lead Full-Stack Engineer & Core JS Contributor</p>
+      <ul>
+        <li><strong>Keynote Session:</strong> Modern JavaScript: Beyond the Basics</li>
+        <li><strong>Venue & Time:</strong> Auditorium Beta • 02:00 PM – 03:30 PM</li>
+        <li><strong>Core Curriculum Covered:</strong>
+          <ol style="margin-top: 6px; margin-left: 18px; font-size: 0.85rem; color: #94a3b8;">
+            <li>Event loop internals: call stack, microtask vs. macrotask queues</li>
+            <li>Asynchronous patterns: Promises, Async/Await, and Fetch API</li>
+            <li>ES6+ power features: Destructuring, Spread/Rest, Closures, and Modules</li>
+            <li>High-performance DOM manipulation and event delegation</li>
+          </ol>
+        </li>
+      </ul>
+     
+    </article>
+  
+    <article class="speaker-card" id="marcus">
+      <div class="avatar">MV</div>
+      <h2>Marcus Vance</h2>
+      <p class="role">Creative Director & Senior Motion Graphics Engineer</p>
+      <ul>
+        <li><strong>Keynote Session:</strong> Graphic Animations & Kinetic UI Choreography</li>
+        <li><strong>Venue & Time:</strong> Visual Arts Studio • 03:45 PM – 05:15 PM</li>
+        <li><strong>Core Curriculum Covered:</strong>
+          <ol style="margin-top: 6px; margin-left: 18px; font-size: 0.85rem; color: #94a3b8;">
+            <li>SVG morphing and line-drawing animations with stroke-dashoffset</li>
+            <li>Mastering cubic-bezier curves, easing, and timing friction</li>
+            <li>Performance optimization: GPU layer promotion (will-change) & 60fps</li>
+            <li>Interactive micro-interactions (magnetic buttons, loading skeletons)</li>
+          </ol>
+        </li>
+       </ul>
+    </article>
+  </main>
+
+</body>
+</html>
