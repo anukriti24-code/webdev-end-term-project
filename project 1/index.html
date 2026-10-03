@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<g>, initial-scale=1.0">
+    <title>Tech Summit</title>
+    <style>
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+            animation: slideUpFade 0.8s ease-out;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: #38bdf8;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+
+        .badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulseGlow 1.8s infinite;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            border: rgba(76, 69, 204, 0.2)
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .inline-options label {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 14px;
+            cursor: pointer;
+        }
+
+        .inline-options input {
+            margin-right: 6px;
+        }
+
+
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            background-color: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background-color: #15e673;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #090b1c;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(35, 102, 131, 0.05);
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: slideUpFade 1s ease-out;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 14px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .portal-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="status">
+            <span class="badge"></span> Open Now
+
+        </div>
+        <h1>TechSummit 2026 Keynote & Workshops</h1>
+    </header>
+    <main class="portal-grid">
+        <div>
+            <section class="basic">
+                <h2>Attendee Guidelines</h2>
+                <ul>
+                    <li>Carry your digital badge on any electronic device.</li>
+                    <li>Collect the entry and food pass from the main registration desk</li>
+                    <li>Follow the required process to access the wifi</li>
+                    <li>Laptops are required for afternoon hands-on workshops.</li>
+                </ul>
+                <h3>Check-In Steps:</h3>
+                <ol>
+                    <li>Report to the registration desk</li>
+                    <li>Collect the entry and food pass from the main registration desk</li>
+                    <li>Follow the required process to access the wifi</li>
+                </ol>
+            </section>
+
+            <section class="basic">
+                <h2>Schedule and Sessions</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <th>Time</th>
+                            <th>Duration</th>
+                            <th>Track</th>
+                            <th>Instructor's Info</th>
+                            <th>Class</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8:00 A.M</td>
+                                <td>2hrs</td>
+                                <td>Advanced CSS</td>
+                                <td><a href="speakers.html#alex" class="table-link"> Advanced CSS Mastery (Alex)</a>
+                                </td>
+                                <td>Second floor 2C</td>
+                            </tr>
+                            <tr>
+                                <td>2:00 P.M</td>
+                                <td>1:30hrs</td>
+                                <td>JavaScript</td>
+                                <td><a href="speakers.html#priya" class="table-link">JavaScript specialist (Priya)</a>
+                                </td>
+                                <td>First floor 1A</td>
+                            </tr>
+                            <tr>
+                                <td>4:00 P.M</td>
+                                <td>2:45hrs</td>
+                                <td>Graphic Animations</td>
+                                <td><a href="speakers.html#marcus" class="table-link">Mastery in Animations (Marcus)</a>
+                                </td>
+                                <td>Second floor 2B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+        <section class="basic">
+            <h2>Reserve your spot</h2>
+            <form action="success.html" method="GET">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">College email address:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="inline-options">
+                        <label for="female">Female:</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="male">Male:</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Pass Type:</label>
+                    <div class="inline-options">
+                        <label for="standard">Standard:</label>
+                        <input type="radio" id="standard" name="standard" value="standard">
+                        <label for="vip">VIP:</label>
+                        <input type="radio" id="vip" name="standard" value="vip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Add-ons</label>
+                    <div class="inline-options">
+                        <label><input type="checkbox" name="addons" value="lunch" /> Lunch Voucher</label>
+                        <label><input type="checkbox" name="addons" value="swag" /> Swag Pack</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="submit-btn">COMPLETE REGISTRATION</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
